@@ -14,14 +14,20 @@ namespace VidzMarcos.API.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            var sArray = new string[] { "Marcos", "Hermes","Sales" };
+            return sArray;
         }
 
-        // GET api/values/5
+        // GET http://localhost:5000/api/values/5
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return "value";
+           var sArray = new string[] {"Marcos","Hermes","Sales"};
+           if (id > (sArray.Length - 1)) 
+           
+           return "O valor digitado e maior do que o disponivel";
+
+           return sArray[id];
         }
 
         // POST api/values
